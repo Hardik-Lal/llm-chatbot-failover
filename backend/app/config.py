@@ -12,7 +12,7 @@ def _split(value: str) -> list[str]:
 @dataclass(frozen=True)
 class Settings:
     api_keys: list[str] = field(default_factory=list, repr=False)
-    model: str = "gemini/gemini-2.5-flash"
+    model: str = "gemini/gemini-3.1-flash-lite"
     database_url: str = "sqlite:////data/app.db"
     allowed_origins: list[str] = field(default_factory=lambda: ["http://localhost:3000"])
     enable_failure_simulation: bool = False
@@ -33,7 +33,7 @@ class Settings:
 def load_settings() -> Settings:
     return Settings(
         api_keys=_split(os.getenv("LLM_API_KEYS", "")),
-        model=os.getenv("LLM_MODEL", "gemini/gemini-2.5-flash"),
+        model=os.getenv("LLM_MODEL", "gemini/gemini-3.1-flash-lite"),
         database_url=os.getenv("DATABASE_URL", "sqlite:////data/app.db"),
         allowed_origins=_split(os.getenv("ALLOWED_ORIGINS", "http://localhost:3000")),
         enable_failure_simulation=os.getenv("ENABLE_FAILURE_SIMULATION", "false").lower() == "true",

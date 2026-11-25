@@ -45,7 +45,7 @@ VITE_API_URL=http://localhost:8000 npm run dev    # http://localhost:3000
 | Variable | Meaning |
 |---|---|
 | `LLM_API_KEYS` | Comma-separated key pool, ≥ 2 keys → `key_1`, `key_2`, … |
-| `LLM_MODEL` | LiteLLM model name (default `gemini/gemini-2.5-flash`) |
+| `LLM_MODEL` | LiteLLM model name (default `gemini/gemini-3.1-flash-lite`) |
 | `DATABASE_URL` | e.g. `sqlite:////data/app.db` |
 | `ALLOWED_ORIGINS` | Comma-separated CORS origins |
 | `ENABLE_FAILURE_SIMULATION` | `true` enables the `X-Simulate-Failure` hook |
